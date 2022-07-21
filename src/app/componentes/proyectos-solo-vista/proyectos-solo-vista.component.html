@@ -1,0 +1,26 @@
+<div id="main-container">
+    <div class="caja" id="caja_proyectos">
+          <div class="row">
+                <div class="col-md-5">
+                      <h3>Proyectos</h3>
+                </div>   
+          </div>
+          <div class="container-fluid">
+                <ul>
+                      <li *ngFor="let proyecto of proyectosList" class="item_proyecto">
+                            <div class="row">
+                                  <div class="col-md-10">
+                                        <h5 id="titulo_proyecto">{{proyecto.nombre}}</h5>
+                                        <p id="p_info_proyecto">{{proyecto.descripcion}}</p>
+                                  </div>
+                                  <div class="col-md-2">
+                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                              <a [href]="proyecto.urlProyecto" class="button"><button class="btn btn-primary" id="btn_ver_proyecto"><i class="bi bi-eye"></i></button></a>
+                                        </div>
+                                  </div>
+                            </div>
+                      </li>
+                </ul>
+          </div>
+    </div>
+</div>

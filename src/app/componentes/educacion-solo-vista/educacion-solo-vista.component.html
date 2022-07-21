@@ -1,0 +1,25 @@
+<div id="main-container">
+    <div class="caja" id="caja_educacion">
+          <div class="row">
+                <div class="col-md-5">
+                      <h3>Educación</h3>
+                </div>   
+          </div>
+          <div class="container-fluid">
+                <ul>
+                      <li *ngFor="let educacion of educacionList" class="item_educacion">
+                            <div class="row">
+                                  <div class="col-md-2">
+                                        <img class="logo_educacion" id="logo_educacion" [src]="educacion.imagen_institucion" [alt]="educacion.comentario_imagen"/>
+                                  </div>
+                                  <div class="col-md-8">
+                                        <div class="titulo_educacion"><h5 id="titulo_educacion">{{educacion.institucion}}</h5></div>
+                                        <div class="p_info_educacion"><p id="p_info_educacion_id">{{educacion.titulo}}</p></div>
+                                        <div class="p_fecha_educacion"><p id="p_info_educacion_id">{{educacion.fecha}}</p></div>
+                                  </div>
+                            </div>
+                      </li>
+                </ul>
+          </div>
+    </div>
+</div>

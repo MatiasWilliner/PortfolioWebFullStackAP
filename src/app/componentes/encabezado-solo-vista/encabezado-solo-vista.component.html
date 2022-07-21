@@ -1,0 +1,37 @@
+<div id="main-container">
+    <div class="caja" id="caja_info_personal">
+          <div class="container-fluid">
+                <div id="imagen_portada">
+                      <img id="imagen_portada_id" [src]="miPortfolio.imagen_portada" [alt]="miPortfolio.comentario_imagen_portada"/>
+                </div>
+                <div id="info" style="padding: 19px">
+                      <div class="container-fluid">
+                            <div class="row">
+                                  <div class="col-md-2">
+                                        <div id="imagen_perfil">
+                                              <img class="imagen_redonda" id="imagen_redonda_id" [src]="miPortfolio.imagen_perfil" [alt]="miPortfolio.comentario_imagen_perfil"/>
+                                        </div>
+                                  </div>
+                            </div>
+                      </div>
+                      <div class="info_imagen">
+                            <div class="row">
+                                  <div class="col-md-8">
+                                        <p id="p_nombre">{{miPortfolio.nombre}}</p>
+                                        <p id="p_curso">{{miPortfolio.titulo}}</p>
+                                        <p id="p_info_varia">{{miPortfolio.pais}}</p>   
+                                  </div>
+                            </div>
+                      </div>  
+                </div>
+                <div class="info_general">
+                      <h3>Información personal</h3>
+                      <div class="row">
+                            <div class="col-md-6">
+                                  <p id="p_info_personal">{{miPortfolio.info_extra}}</p>
+                            </div>
+                      </div>
+                </div>
+          </div>
+    </div>
+</div>

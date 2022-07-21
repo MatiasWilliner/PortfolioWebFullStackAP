@@ -1,0 +1,97 @@
+<div id="main-container">
+      <div class="caja" id="caja_info_personal">
+            <div class="container-fluid">
+                  <div id="imagen_portada">
+                        <img id="imagen_portada_id" [src]="miPortfolio.imagen_portada" [alt]="miPortfolio.comentario_imagen_portada"/>
+                  </div>
+                  <div id="info" style="padding: 19px">
+                        <div class="container-fluid">
+                              <div class="row">
+                                    <div class="col-md-2">
+                                          <div id="imagen_perfil">
+                                                <img class="imagen_redonda" id="imagen_redonda_id" [src]="miPortfolio.imagen_perfil" [alt]="miPortfolio.comentario_imagen_perfil"/>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="info_imagen">
+                              <div class="row">
+                                    <div class="col-md-10">
+                                          <p id="p_nombre">{{miPortfolio.nombre}}</p>
+                                          <p id="p_curso">{{miPortfolio.titulo}}</p>
+                                          <p id="p_info_varia">{{miPortfolio.pais}}</p>   
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">   
+                                                <div class="boton_editar" id="boton_editar_encabezado" (click)="onOpenModal('edit',miPortfolio)"><button class="btn btn-primary"><i class="bi bi-pencil"></i></button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>  
+                  </div>
+                  <div class="info_general">
+                        <h3>Información personal</h3>
+                        <div class="row">
+                              <div class="col-md-6">
+                                    <p id="p_info_personal">{{miPortfolio.info_extra}}</p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="editPersonaModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="editPersonaModalLabel">Editar datos perfil</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form #editForm="ngForm">
+                              <div class="form-group">
+                                    <input type="hidden" ngModel="{{editPersona?.id}}" name="id" class="form-control" id="id">
+                              </div>
+                              <div class="form-group">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                    <input type="text" ngModel="{{editPersona?.nombre}}" name="nombre" class="form-control" id="nombre">
+                              </div>
+                              <div class="form-group">
+                                    <label for="titulo" class="col-form-label">Título:</label>
+                                    <input type="text" ngModel="{{editPersona?.titulo}}" name="titulo" class="form-control" id="titulo">
+                              </div>
+                              <div class="form-group">
+                                    <label for="pais" class="col-form-label">País:</label>
+                                    <input type="text" ngModel="{{editPersona?.pais}}" name="pais" class="form-control" id="pais">
+                              </div>
+                              <div class="form-group">
+                                    <label for="imagen_portada" class="col-form-label">Imagen de portada:</label>
+                                    <input type="text" ngModel="{{editPersona?.imagen_portada}}" name="imagen_portada" class="form-control" id="imagen_portada">
+                              </div>
+                              <div class="form-group">
+                                    <label for="comentario_imagen_portada" class="col-form-label">Comentario de imagen de portada:</label>
+                                    <input type="text" ngModel="{{editPersona?.comentario_imagen_portada}}" name="comentario_imagen_portada" class="form-control" id="comentario_imagen_portada">
+                              </div>
+                              <div class="form-group">
+                                    <label for="imagen_perfil" class="col-form-label">Imagen de perfil:</label>
+                                    <input type="text" ngModel="{{editPersona?.imagen_perfil}}" name="imagen_perfil" class="form-control" id="imagen_perfil">
+                              </div>
+                              <div class="form-group">
+                                    <label for="comentario_imagen_perfil" class="col-form-label">Comentario de imagen de perfil:</label>
+                                    <input type="text" ngModel="{{editPersona?.comentario_imagen_perfil}}" name="comentario_imagen_perfil" class="form-control" id="comentario_imagen_perfil">
+                              </div>
+                              <div class="form-group">
+                                    <label for="info_extra" class="col-form-label">Información extra:</label>
+                                    <input type="text" ngModel="{{editPersona?.info_extra}}" name="info_extra" class="form-control" id="info_extra">
+                              </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button  (click)="onEditPersona(editForm.value)" class="btn btn-primary" data-dismiss="modal">Modificar</button>
+                  </div>
+            </div>
+      </div>
+</div>

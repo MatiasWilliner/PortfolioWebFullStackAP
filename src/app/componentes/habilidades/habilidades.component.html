@@ -1,0 +1,110 @@
+<div id="main-container">
+      <div class="caja" id="caja_habilidades">
+            <div class="row">
+                  <div class="col-md-10">
+                        <h3>Habilidades</h3>
+                  </div> 
+                  <div class="col-md-2">
+                        <button type="button" class="btn btn-success" (click)="onOpenModal('add')"><a class="nav-link" style="color:azure"><i class="bi bi-plus-lg"></i></a></button>
+                  </div>   
+            </div>
+            <div class="container-fluid">
+                  <ul>
+                        <li *ngFor="let habilidad of habilidadList" class="item_habilidad">
+                              <div class="row">
+                                    <div class="col-md-10">
+                                          <p>{{habilidad.descripcion}}</p>
+                                          <div class="progress">
+                                                <div type="progressbar" class="progress-bar progress-bar-striped bg-success active" role="progressbar" [style.width.%]="habilidad.nivel" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">{{habilidad.nivel}}%</div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" (click)="onOpenModal('edit',habilidad)" ><button class="btn btn-primary"><i class="bi bi-pencil"></i></button></div>
+                                                <div class="boton_eliminar" (click)="onOpenModal('delete',habilidad)"><button class="btn btn-dark"><i class="bi bi-x-lg"></i></button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="addHabilidadModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addHabilidadModalLabel">Añadir habilidad</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form #addForm="ngForm">
+                              <div class="form-group">
+                                    <label for="descripcion" class="col-form-label">Comentario:</label>
+                                    <input type="text" ngModel name="descripcion" class="form-control" id="descripcion" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="nivel" class="col-form-label">Nivel:</label>
+                                    <input type="text" ngModel name="nivel" class="form-control" id="nivel" required>
+                              </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" id="add-habilidad-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button (click)="onAddHabilidad(addForm)" [disabled]="addForm.invalid" id="add-habilidad-form" type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="deleteHabilidadModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="deleteHabilidadModalLabel">Eliminar habilidad</h4>
+                  </div>
+                  <div class="modal-body">
+                        <p>Estas seguro que quieres eliminar la habilidad {{deleteHabilidad?.descripcion}}</p>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button (click)="onDeleteHabilidad(deleteHabilidad!.id)" class="btn btn-danger" data-dismiss="modal">Si</button>
+                  </div>
+            </div>
+      </div>
+</div>
+    
+<!-- Modal -->
+<div id="editHabilidadModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="editHbailidadModalLabel">Editar educación {{editHabilidad?.descripcion}}</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form #editForm="ngForm">
+                              <div class="form-group">
+                                    <input type="hidden" ngModel="{{editHabilidad?.id}}" name="id" class="form-control" id="id">
+                              </div>
+                              <div class="form-group">
+                                    <label for="descripcion" class="col-form-label">descripcion:</label>
+                                    <input type="text" ngModel="{{editHabilidad?.descripcion}}" name="descripcion" class="form-control" id="descripcion">
+                              </div>
+                              <div class="form-group">
+                                    <label for="nivel" class="col-form-label">Nivel:</label>
+                                    <input type="text" ngModel="{{editHabilidad?.nivel}}" name="nivel" class="form-control" id="nivel">
+                              </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button  (click)="onEditHabilidad(editForm.value)" class="btn btn-primary" data-dismiss="modal">Modificar</button>
+                  </div>
+            </div>
+      </div>
+</div>

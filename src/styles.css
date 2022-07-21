@@ -1,0 +1,182 @@
+.progress{
+    margin-top: -10px;
+}
+#imagen_perfil{
+    border-radius: 32px;
+}
+
+#imagen_portada{
+    border-spacing: 120px;
+}
+
+.boton_editar{
+    text-align: right;
+}
+
+.boton_eliminar{
+    text-align: right;
+    height: auto;
+    max-width: 100%;
+}
+.caja{
+    border-radius: 32px;
+    margin: 10px 10px;
+    padding: 20px;
+    border:1px solid #666;
+}
+
+div#imagen_portada{
+    display: flex;
+    z-index: 1;
+}
+
+div#imagen_portada img{
+    width: 100%;
+    height: 100%;
+    border-radius: 32px 32px 0px 0px;
+    border:1px solid #666;
+    text-align: center;
+}
+.info_imagen{
+    text-align:justify;
+}
+
+.info_imagen p {
+    margin-bottom: -10px;
+}
+
+.imagen_redonda{
+    border-radius: 50%;
+    height: 152px;
+    width: 152px;
+    margin-top: -110px;
+    z-index: 1;
+    border:1px solid #666;
+}
+
+.ver {
+    width:3em;
+    height:3em;
+}
+
+.logo{
+    width:auto;
+    height:5em;
+    margin-top: -10px;
+    margin-left: -20px;
+}
+
+.redSocial{
+    width:2em;
+    height:2em;
+}
+
+header{
+    background:rgb(126, 151, 235);
+    height: 100px;
+}
+
+.logo_educacion{
+    height: 100px;
+    width: 100px;
+}
+
+.logo_laboral{
+    height: 100px;
+    width: 100px;
+}
+
+.boton_editar_opcion{
+    text-align: right;
+}
+
+.contenido_encabezado{
+    margin-top: 100px;
+}
+
+header{
+    padding-top: 20px;
+}
+
+.item_educacion{
+    margin-bottom: 20px;
+}
+.item_laboral{
+    margin-bottom: 20px;
+}
+
+ul{
+    list-style: none;
+}
+
+.btn-gruop{
+    margin-bottom: 100px;
+}
+
+#barra{
+    background-color:rgb(1, 2, 5);
+}
+
+.logo{
+    margin-top: 2px;
+    margin-left: 1px;
+    height: 70px;
+    width: 100px;
+}
+#titulo_barra{
+    margin-top: 20px;
+}
+
+#link_login{
+    margin-top: 20px;
+}
+
+#caja_info_personal{
+    background-color: white;
+}
+
+#caja_educacion{
+    background-color: white;
+}
+
+#caja_habilidades{
+    background-color: white;
+}
+
+#caja_proyectos{
+    background-color: white;
+}
+
+#caja_experiencia_laboral{
+    background-color: white;
+}
+
+#contenedor-general{
+    background-color:rgb(1, 2, 5);
+}
+
+footer{
+    background: rgb(1, 2, 5);
+}
+
+#titulo_barra{
+    color: white;
+}
+
+.info_pie{
+    color: white;
+    margin-left: 20px;
+}
+
+.container-fluid{
+    margin-top: 20px;
+}
+
+#boton_editar_encabezado{
+    margin-top: 20px;
+}
+
+
+
+
+

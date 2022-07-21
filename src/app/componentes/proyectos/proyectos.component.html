@@ -1,0 +1,115 @@
+<div id="main-container">
+      <div class="caja" id="caja_proyectos">
+            <div class="row">
+                  <div class="col-md-10">
+                        <h3>Proyectos</h3>
+                  </div> 
+                  <div class="col-md-2">
+                        <button type="button" class="btn btn-success" (click)="onOpenModal('add')"><a class="nav-link" style="color:azure"><i class="bi bi-plus-lg"></i></a></button>
+                  </div>   
+            </div>
+            <div class="container-fluid">
+                  <ul>
+                        <li *ngFor="let proyecto of proyectosList" class="item_proyecto">
+                              <div class="row">
+                                    <div class="col-md-10">
+                                          <h5 id="titulo_proyecto">{{proyecto.nombre}}</h5>
+                                          <p id="p_info_proyecto">{{proyecto.descripcion}}</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" (click)="onOpenModal('edit',proyecto)"><button class="btn btn-primary"><i class="bi bi-pencil"></i></button></div>
+                                                <div class="boton_eliminar" (click)="onOpenModal('delete',proyecto)"><button class="btn btn-dark"><i class="bi bi-x-lg"></i></button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="addProyectoModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addProyectoModalLabel">Añadir proyecto</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form #addForm="ngForm">
+                              <div class="form-group">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                    <input type="text" ngModel name="nombre" class="form-control" id="nombre" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="descripcion" class="col-form-label">Descripcion:</label>
+                                    <input type="text" ngModel name="descripcion" class="form-control" id="descripcion" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="urlProyecto" class="col-form-label">Dirrección:</label>
+                                    <input type="text" ngModel name="urlProyecto" class="form-control" id="urlProyecto" required>
+                              </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" id="add-proyecto-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button (click)="onAddProyecto(addForm)" [disabled]="addForm.invalid" id="add-proyecto-form" type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="deleteProyectoModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addProyectoModalLabel">Eliminar proyecto</h4>
+                  </div>
+                  <div class="modal-body">
+                        <p>Estas seguro que quieres eliminar el proyecto {{deleteProyecto?.nombre}}</p>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" id="add-proyecto-form" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button (click)="onDeleteProyecto(deleteProyecto!.id)" class="btn btn-danger" data-dismiss="modal">Si</button>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="editProyectoModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="editProyectoModalLabel">Editar experiencia laboral {{editProyecto?.titulo}}</h4>
+                  </div>
+            <div class="modal-body">
+                  <form #editForm="ngForm">
+                        <div class="form-group">
+                              <input type="hidden" ngModel="{{editProyecto?.id}}" name="id" class="form-control" id="id">
+                        </div>
+                        <div class="form-group">
+                              <label for="nombre" class="col-form-label">Nombre:</label>
+                              <input type="text" ngModel="{{editProyecto?.nombre}}" name="nombre" class="form-control" id="nombre">
+                        </div>
+                        <div class="form-group">
+                              <label for="descripcion" class="col-form-label">Descripción:</label>
+                              <input type="text" ngModel="{{editProyecto?.descripcion}}" name="descripcion" class="form-control" id="descripcion">
+                        </div>
+                        <div class="form-group">
+                              <label for="urlProyecto" class="col-form-label">Dirrección:</label>
+                              <input type="text" ngModel="{{editProyecto?.urlProyecto}}" name="urlProyecto" class="form-control" id="urlProyecto">
+                        </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button  (click)="onEditProyecto(editForm.value)" class="btn btn-primary" data-dismiss="modal">Modificar</button>
+            </div>
+      </div>
+</div>

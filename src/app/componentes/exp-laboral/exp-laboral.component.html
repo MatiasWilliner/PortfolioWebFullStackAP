@@ -1,0 +1,135 @@
+<div id="main-container">
+      <div class="caja" id="caja_experiencia_laboral">
+            <div class="row">
+                  <div class="col-md-10">
+                        <h3>Experiencia laboral</h3>
+                  </div> 
+                  <div class="col-md-2">
+                        <button type="button" class="btn btn-success" (click)="onOpenModal('add')"><a class="nav-link" style="color:azure"><i class="bi bi-plus-lg"></i></a></button>
+                  </div>   
+            </div>
+            <div class="container-fluid">
+                  <ul>
+                        <li *ngFor="let laboral of laboralList" class="item_laboral">
+                              <div class="row">
+                                    <div class="col-md-2">
+                                          <img class="logo_laboral" id="logo_laboral" [src]="laboral.imagen_laboral" [alt]="laboral.comentario_imagen"/>
+                                    </div>
+                                    <div class="col-md-8">
+                                          <div class="titulo_laboral"><h5 id="titulo_laboral">{{laboral.organizacion}}</h5></div>
+                                          <div class="p_info_laboral"><p id="p_info_laboral_id">{{laboral.tarea}}</p></div>
+                                          <div class="p_info_laboral"><p id="p_info_laboral_id">{{laboral.fecha}}</p></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" (click)="onOpenModal('edit',laboral)"><button class="btn btn-primary"><i class="bi bi-pencil"></i></button></div>
+                                                <div class="boton_eliminar" (click)="onOpenModal('delete',laboral)"><button class="btn btn-dark"><i class="bi bi-x-lg"></i></button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="addLaboralModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addLaboralModalLabel">Añadir experiencia laboral</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form #addForm="ngForm">
+                              <div class="form-group">
+                                    <label for="organizacion" class="col-form-label">Organizacion:</label>
+                                    <input type="text" ngModel name="organizacion" class="form-control" id="organizacion" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="tarea" class="col-form-label">Tarea:</label>
+                                    <input type="text" ngModel name="tarea" class="form-control" id="tarea" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="fecha" class="col-form-label">Fecha:</label>
+                                    <input type="text" ngModel name="fecha" class="form-control" id="fecha" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="imagen_laboral" class="col-form-label">Imagen de la organizacion:</label>
+                                    <input type="text" ngModel name="imagen_laboral" class="form-control" id="imagen_laboral" required>
+                              </div>
+                              <div class="form-group">
+                                    <label for="comentario_imagen" class="col-form-label">Comentario de imagen:</label>
+                                    <input type="text" ngModel name="comentario_imagen" class="form-control" id="comentario_imagen" required>
+                              </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" id="add-laboral-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button (click)="onAddLaboral(addForm)" [disabled]="addForm.invalid" id="add-laboral-form" type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="deleteLaboralModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addLaboralModalLabel">Eliminar experiencia laboral</h4>
+                  </div>
+                  <div class="modal-body">
+                        <p>Estas seguro que quieres eliminar la experiencia laboral {{deleteLaboral?.titulo}}</p>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" id="add-laboral-form" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button (click)="onDeleteLaboral(deleteLaboral!.id)" class="btn btn-danger" data-dismiss="modal">Si</button>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- Modal -->
+<div id="editLaboralModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="editLaboralModalLabel">Editar experiencia laboral {{editLaboral?.titulo}}</h4>
+                  </div>
+            <div class="modal-body">
+                  <form #editForm="ngForm">
+                        <div class="form-group">
+                              <input type="hidden" ngModel="{{editLaboral?.id}}" name="id" class="form-control" id="id">
+                        </div>
+                        <div class="form-group">
+                              <label for="organizacion" class="col-form-label">Organizacion:</label>
+                              <input type="text" ngModel="{{editLaboral?.organizacion}}" name="organizacion" class="form-control" id="organizacion">
+                        </div>
+                        <div class="form-group">
+                              <label for="tarea" class="col-form-label">Tarea:</label>
+                              <input type="text" ngModel="{{editLaboral?.tarea}}" name="tarea" class="form-control" id="tarea">
+                        </div>
+                        <div class="form-group">
+                              <label for="fecha" class="col-form-label">Fecha:</label>
+                              <input type="text" ngModel="{{editLaboral?.fecha}}" name="fecha" class="form-control" id="fecha">
+                        </div>
+                        <div class="form-group">
+                              <label for="imagen_organizacion" class="col-form-label">Imagen de la institucion:</label>
+                              <input type="text" ngModel="{{editLaboral?.imagen_organizacion}}" name="imagen_organizacion" class="form-control" id="imagen_organizacion">
+                        </div>
+                        <div class="form-group">
+                              <label for="comentario_imagen" class="col-form-label">Comentario de imagen:</label>
+                              <input type="text" ngModel="{{editLaboral?.comentario_imagen}}" name="comentario_imagen" class="form-control" id="comentario_imagen">
+                        </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button  (click)="onEditLaboral(editForm.value)" class="btn btn-primary" data-dismiss="modal">Modificar</button>
+            </div>
+      </div>
+</div>

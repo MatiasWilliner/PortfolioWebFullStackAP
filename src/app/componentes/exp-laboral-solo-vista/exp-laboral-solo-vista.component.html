@@ -1,0 +1,25 @@
+<div id="main-container">
+    <div class="caja" id="caja_experiencia_laboral">
+          <div class="row">
+                <div class="col-md-5">
+                      <h3>Experiencia laboral</h3>
+                </div>   
+          </div>
+          <div class="container-fluid">
+                <ul>
+                      <li *ngFor="let laboral of laboralList" class="item_laboral">
+                            <div class="row">
+                                  <div class="col-md-2">
+                                        <img class="logo_laboral" id="logo_laboral" [src]="laboral.imagen_laboral" [alt]="laboral.comentario_imagen"/>
+                                  </div>
+                                  <div class="col-md-8">
+                                        <div class="titulo_laboral"><h5 id="titulo_laboral">{{laboral.organizacion}}</h5></div>
+                                        <div class="p_info_laboral"><p id="p_info_laboral_id">{{laboral.tarea}}</p></div>
+                                        <div class="p_info_laboral"><p id="p_info_laboral_id">{{laboral.fecha}}</p></div>
+                                  </div>
+                            </div>
+                      </li>
+                </ul>
+          </div>
+    </div>
+</div>
