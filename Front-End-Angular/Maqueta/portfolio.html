@@ -1,0 +1,492 @@
+<html>
+<head>
+      <link href="./css/bootstrap.min.css" rel="stylesheet">
+      <link href="./estilosPortfolio.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+
+      <header>
+            <div class="container-fluid">
+                  <div class="row">
+                        <div class="col-md-1" class="contenido_encabezado">
+                              <img class=logo src=".\imagenes\APLogo-20-20.png" alt="logo"/>
+                        </div>
+                        <div class="col-md-9" class="contenido_encabezado">
+                              <h1>Argentina programa - #YoProgramo</h1>
+                        </div>
+                        <div class="col-md-1" class="contenido_encabezado">
+                              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    <a href=""><button class="btn btn-primary">Acceder</button></a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </header>
+
+      <section>
+
+            <div class="caja" id="caja_info_personal">
+                  <div class="container-fluid">
+                        <div id="imagen_portada">
+                              <img id="imagen_portada_id" src="C:\Users\Usuario\Pictures\Fondos\1.jpg" alt="Foto portada"/>
+                        </div>
+                        <div id="info" style="padding: 19px">
+                              <div class="container-fluid">
+                                    <div class="row">
+                                          <div class="col-md-2">
+                                                <div id="imagen_perfil">
+                                                      <img class="imagen_redonda" id="imagen_redonda_id" src=".\imagenes\Captura.png" alt="Foto perfil"/>
+                                                </div>
+                                          </div>
+                                          <div class="col-md-7">
+                                                <input id="file2" type="file" accept="image/*" onchange="showFileImagen('file2','imagen_redonda_id')" style="display:none">
+                                                <button class="btn btn-primary" onclick="activarInputImagen('file2')">Editar</button>
+                                          </div>
+                                          <div class="col-md-3">
+                                                <input id="editar_imagen_portada" type="file" accept="image/*" onchange="showFileImagen('editar_imagen_portada','imagen_portada_id')" style="display:none">
+                                                <button class="btn btn-primary" id="btn_imagen_portada" onclick="activarInputImagen('editar_imagen_portada')">Editar</button>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="info_imagen">
+                                    <div class="row">
+                                          <div class="col-md-6">
+                                                <p id="p_nombre">Matías Williner</p>
+                                                <p id="p_curso">Full Stack Developer Jr</p>
+                                                <p id="p_info_varia">Rafaela - Santa Fe - Argentina</p>   
+                                          </div>
+                                          <div class="col-md-4">
+                                                <input id="editar_info_general" type="text" oninput="myFunction2(this.value,'p_nombre')" style="display:none">
+                                                <input id="editar_info_general_1" type="text" oninput="myFunction2(this.value,'p_curso')" style="display:none">
+                                                <input id="editar_info_general_2" type="text" oninput="myFunction2(this.value,'p_info_varia')" style="display:none">
+                                          </div>
+                                          <div class="col-md-1">
+                                                <div class="boton_editar" onclick="CambiarParrafoTriple('p_nombre','editar_info_general','p_curso','editar_info_general_1','p_info_varia','editar_info_general_2')" ><button class="btn btn-primary">Editar</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                              
+                        </div>
+
+                        <div class="info_general">
+                              <h3>Información personal</h3>
+                              <div class="row">
+                                    <div class="col-md-6">
+                                          <p id="p_info_personal">Técnico en informática personal y profesional. Estudiante de ingeniería en informática. </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <input id="editar_info_personal" type="text" oninput="myFunction2(this.value,'p_info_personal')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">   
+                                                <div class="boton_editar" onclick="CambiarParrafo('p_info_personal','editar_info_personal')"><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElemento('p_info_personal')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <div class="caja" id="caja_experiencia_laboral">
+                  <div class="container-fluid">
+                        <div class="row">
+                              <h3>Experiencia laboral</h3>
+                        </div>
+
+                        <div class="item_laboral">
+                              <div class="row">
+                                    <div class="col-md-1">
+                                          <img class="logo_laboral" id="logo_laboral" src="" alt="Logo laboral"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <div class="titulo_laboral"><h5 id="titulo_laboral"></h5></div>
+                                          <div class="p_info_laboral"><p id="p_info_laboral_id"></p></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                          <input id="editar_info_laboral_1" type="text" oninput="myFunction2(this.value,'titulo_laboral')" style="display:none">
+                                          <input id="editar_info_laboral_2" type="text" oninput="myFunction2(this.value,'p_info_laboral_id')" style="display:none">
+                                          <input id="editar_logo_laboral" type="file" accept="image/*" onchange="showFileImagen('editar_logo_laboral','logo_laboral')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" onclick="CambiarParrafoConImagen('p_info_laboral_id','editar_info_laboral_1','editar_info_laboral_2','titulo_laboral','editar_logo_laboral')" ><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConImagen('titulo_laboral','p_info_laboral_id','logo_laboral')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="item_laboral">
+                              <div class="row">
+                                    <div class="col-md-1">
+                                          <img class="logo_laboral" id="logo_laboral_1" src="" alt="Logo laboral"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <div class="titulo_laboral"><h5 id="titulo_laboral_1"></h5></div>
+                                          <div class="p_info_laboral"><p id="p_info_laboral_1_id"></p></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                          <input id="editar_info_laboral_3" type="text" oninput="myFunction2(this.value,'titulo_laboral_1')" style="display:none">
+                                          <input id="editar_info_laboral_4" type="text" oninput="myFunction2(this.value,'p_info_laboral_1_id')" style="display:none">
+                                          <input id="editar_logo_laboral_1" type="file" accept="image/*" onchange="showFileImagen('editar_logo_laboral_1','logo_laboral_1')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" onclick="CambiarParrafoConImagen('p_info_laboral_1_id','editar_info_laboral_3','editar_info_laboral_4','titulo_laboral_1','editar_logo_laboral_1')" ><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConImagen('titulo_laboral_1','p_info_laboral_1_id','logo_laboral_1')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="item_laboral">
+                              <div class="row">
+                                    <div class="col-md-1">
+                                          <img class="logo_laboral" id="logo_laboral_2" src="" alt="Logo laboral"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <div class="titulo_laboral"><h5 id="titulo_laboral_2"></h5></div>
+                                          <div class="p_info_laboral"><p id="p_info_laboral_2_id"></p></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                          <input id="editar_info_laboral_5" type="text" oninput="myFunction2(this.value,'titulo_laboral_2')" style="display:none">
+                                          <input id="editar_info_laboral_6" type="text" oninput="myFunction2(this.value,'p_info_laboral_2_id')" style="display:none">
+                                          <input id="editar_logo_laboral_2" type="file" accept="image/*" onchange="showFileImagen('editar_logo_laboral_2','logo_laboral_2')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" onclick="CambiarParrafoConImagen('p_info_laboral_2_id','editar_info_laboral_5','editar_info_laboral_6','titulo_laboral_2','editar_logo_laboral_2')" ><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConImagen('titulo_laboral_2','p_info_laboral_2_id','logo_laboral_2')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+
+            <div class="caja" id="caja_educacion">
+                  <h3>Educación</h3>
+                  <div class="container-fluid">
+
+                        <div class="item_educacion">
+                              <div class="row">
+                                    <div class="col-md-1">
+                                          <img class="logo_educacion" id="logo_educacion" src=".\imagenes\logo.png" alt="Logo E.E.T.P. N°460 Guillermo Lehmann"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <div class="titulo_educacion"><h5 id="titulo_educacion">E.E.T.P. N°460 "Guillermo Lehmann"</h5></div>
+                                          <div class="p_info_educacion"><p id="p_info_educacion_id">Técnico en informática profesional y personal - 2019</p></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                          <input id="editar_info_educacion_1" type="text" oninput="myFunction2(this.value,'titulo_educacion')" style="display:none">
+                                          <input id="editar_info_educacion_2" type="text" oninput="myFunction2(this.value,'p_info_educacion_id')" style="display:none">
+                                          <input id="editar_logo_educacion" type="file" accept="image/*" onchange="showFileImagen('editar_logo_educacion','logo_educacion')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" onclick="CambiarParrafoConImagen('p_info_educacion_id','editar_info_educacion_1','editar_info_educacion_2','titulo_educacion','editar_logo_educacion')" ><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConImagen('titulo_educacion','p_info_educacion_id','logo_educacion')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="item_educacion">
+                              <div class="row">
+                                    <div class="col-md-1">
+                                          <img class="logo_educacion" id="logo_educacion_1" src=".\imagenes\LogoUCSE.jpg" alt="Logo Universidad Católica de Santiago del Estero"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <div class="titulo_educacion"><h5 id="titulo_educacion_1">Universidad Católica de Santiago del Estero - Sede Rafaela</h5></div>
+                                          <div class="info_educacion"><p id="p_info_educacion_1_id">Ingeniría en informática</p></div>
+                                    </div>  
+                                    <div class="col-md-5">
+                                          <input id="editar_info_educacion_3" type="text" oninput="myFunction2(this.value,'titulo_educacion_1')" style="display:none">
+                                          <input id="editar_info_educacion_4" type="text" oninput="myFunction2(this.value,'p_info_educacion_1_id')" style="display:none">
+                                          <input id="editar_logo_educacion_1" type="file" accept="image/*" onchange="showFileImagen('editar_logo_educacion_1','logo_educacion_1')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" onclick="CambiarParrafoConImagen('p_info_educacion_1_id','editar_info_educacion_4','editar_info_educacion_3','titulo_educacion_1','editar_logo_educacion_1')"><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConImagen('titulo_educacion_1','p_info_educacion_1_id','logo_educacion_1')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="item_educacion">
+                              <div class="row">
+                                    <div class="col-md-1">
+                                          <img class="logo_educacion" id="logo_educacion_2" src=".\imagenes\google.jpg" alt="Logo Google activate"/>
+                                    </div> 
+                                    <div class="col-md-4">   
+                                          <div class="titulo_educacion"><h5 id="titulo_educacion_2">Google activate</h5></div>
+                                          <div class="info_educacion"><p id="p_info_educacion_2_id">Cloud computing, Desarrollo apps móviles</p></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                          <input id="editar_info_educacion_5" type="text" oninput="myFunction2(this.value,'titulo_educacion_2')" style="display:none">
+                                          <input id="editar_info_educacion_6" type="text" oninput="myFunction2(this.value,'p_info_educacion_2_id')" style="display:none">
+                                          <input id="editar_logo_educacion_2" type="file" accept="image/*" onchange="showFileImagen('editar_logo_educacion_2','logo_educacion_2')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <div class="boton_editar" onclick="CambiarParrafoConImagen('p_info_educacion_2_id','editar_info_educacion_5','editar_info_educacion_6','titulo_educacion_2','editar_logo_educacion_2')"><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConImagen('titulo_educacion_2','p_info_educacion_2_id','logo_educacion_2')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+
+            
+
+            <div class="caja" id="caja_habilidades">
+                  <h3>Habilidades</h3>
+                  <div id="idiomas"><h5>Idiomas</h5>
+                        <p>Nivel de ingles</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                        <p>Nivel de italiano</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
+                  </div>
+                  <div><h5>Conocimiento en lenguajes</h5>
+                        <p>VisualFoxPro - VisualBasic</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
+                        <p>C# - HTML</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                        <p>CSS - Javascript</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+                        <p>Python - SQL</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                        </div>
+                  </div>
+                  <div><h5>Conocimiento varios</h5>
+                        <p>Conocimiento de servicio Técnico</p>
+                        <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                  </div>
+            </div>
+
+            <div class="caja" id="caja_proyectos">
+                  <h3>Proyectos</h3>
+                  <div class="item_proyecto">
+                        <h5 id="titulo_proyecto">Programa para resolución de cuestiones matemáticas</h5>
+                        <div class="container-fluid">
+                              <div class="row">
+                                    <div class="col-md-6">
+                                          <p id="p_info_proyecto">Pequeño programa con formulario y varias opciones para realizar diversas operaciones de forma automatica. Escrito en C# </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <input id="editar_info_proyecto" type="text" oninput="myFunction2(this.value,'titulo_proyecto')" style="display:none">
+                                          <input id="editar_info_proyecto_1" type="text" oninput="myFunction2(this.value,'p_info_proyecto')" style="display:none">
+                                          <input id="editar_link_proyecto" type="url" oninput="myFunction(this.value,'link_proyecto_1')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <a href="" id="link_proyecto_1"><button class="btn btn-primary" id="btn_ver_proyecto">Ver</button></a>
+                                                <div class="boton_editar" onclick="CambiarParrafoConBoton('p_info_proyecto','editar_info_proyecto','editar_info_proyecto_1','titulo_proyecto','editar_link_proyecto','link_proyecto_1')"><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConBoton('titulo_proyecto','p_info_proyecto','btn_ver_proyecto')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="item_proyecto">
+                        <h5 id="titulo_proyecto_1">Programa para administración de empresa</h5>
+                        <div class="container-fluid">
+                              <div class="row">
+                                    <div class="col-md-6">
+                                          <p id="p_info_proyecto_1">Programa orientado a administración de pequeña empresa de "rubro". Implementando la programación orientada a objetos y escrito en C#</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <input id="editar_info_proyecto_2" type="text" oninput="myFunction2(this.value,'titulo_proyecto_1')" style="display:none">
+                                          <input id="editar_info_proyecto_3" type="text" oninput="myFunction2(this.value,'p_info_proyecto_1')" style="display:none">
+                                          <input id="editar_link_proyecto_1" type="url" oninput="myFunction(this.value,'link_proyecto_2')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <a href="" id="link_proyecto_2"><button class="btn btn-primary" id="btn_ver_proyecto_1">Ver</button></a>
+                                                <div class="boton_editar" onclick="CambiarParrafoConBoton('p_info_proyecto_1','editar_info_proyecto_2','editar_info_proyecto_3','titulo_proyecto_1','editar_link_proyecto_1','link_proyecto_2')"><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConBoton('titulo_proyecto_1','p_info_proyecto_1','btn_ver_proyecto_1')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="item_proyecto">
+                        <h5 id="titulo_proyecto_2"></h5>
+                        <div class="container-fluid">
+                              <div class="row">
+                                    <div class="col-md-6">
+                                          <p id="p_info_proyecto_2"></p>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <input id="editar_info_proyecto_4" type="text" oninput="myFunction2(this.value,'titulo_proyecto_2')" style="display:none">
+                                          <input id="editar_info_proyecto_5" type="text" oninput="myFunction2(this.value,'p_info_proyecto_2')" style="display:none">
+                                          <input id="editar_link_proyecto_2" type="url" oninput="myFunction(this.value,'link_proyecto_3')" style="display:none">
+                                    </div>
+                                    <div class="col-md-2">
+                                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                <a href="" id="link_proyecto_3"><button class="btn btn-primary" id="btn_ver_proyecto_2">Ver</button></a>
+                                                <div class="boton_editar" onclick="CambiarParrafoConBoton('p_info_proyecto_2','editar_info_proyecto_4','editar_info_proyecto_5','titulo_proyecto_2','editar_link_proyecto_2','link_proyecto_3')"><button class="btn btn-primary">Editar</button></div>
+                                                <div class="boton_eliminar" onclick="EliminarElementoConBoton('titulo_proyecto_2','p_info_proyecto_2','btn_ver_proyecto_2')"><button class="btn btn-dark">X</button></div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+      </section>
+      
+      <footer>
+            Matías Williner 2022
+      </footer>
+
+      <script>src="./js/jquery.js"</script>
+      <script>src="./js/bootstrap.min.js"</script>
+      <script>
+
+            function CambiarParrafo(infoCambiar,btnCambiar){
+                  document.getElementById(btnCambiar).style.display="block";
+                  CrearVariable(btnCambiar);
+                  let texto=document.getElementById(infoCambiar).innerText
+                  console.log(texto)
+            }
+
+            function CambiarParrafoTriple(infoCambiar,btnCambiar,infoCambiar1,btnCambiar1,infoCambiar2,btnCambiar2){
+                  document.getElementById(btnCambiar).style.display="block";
+                  CrearVariable(btnCambiar);
+                  let texto=document.getElementById(infoCambiar).innerText
+                  document.getElementById(btnCambiar1).style.display="block";
+                  CrearVariable(btnCambiar1);
+                  let texto1=document.getElementById(infoCambiar1).innerText
+                  document.getElementById(btnCambiar2).style.display="block";
+                  CrearVariable(btnCambiar2);
+                  let texto2=document.getElementById(infoCambiar2).innerText
+            }
+
+            function CambiarParrafoConImagen(infoCambiar,btnCambiar,btnCambiarTitulo,tituloCambiar,inputImagen){
+                  document.getElementById(btnCambiar).style.display="block";
+                  CrearVariable(btnCambiar);
+                  let texto=document.getElementById(infoCambiar)
+                  document.getElementById(btnCambiarTitulo).style.display="block";
+                  CrearVariable(btnCambiarTitulo);
+                  let texto1=document.getElementById(tituloCambiar)
+                  activarInputImagen(inputImagen)
+            }
+
+            function CambiarParrafoConBoton(infoCambiar,btnCambiar,btnCambiarTitulo,tituloCambiar,inputLink,linkModificar){
+                  document.getElementById(btnCambiar).style.display="block";
+                  CrearVariable(btnCambiar);
+                  let texto=document.getElementById(infoCambiar)
+                  document.getElementById(btnCambiarTitulo).style.display="block";
+                  CrearVariable(btnCambiarTitulo);
+                  let texto1=document.getElementById(tituloCambiar)
+                  document.getElementById(inputLink).style.display="block";
+                  CrearVariable(inputLink);
+                  let link=document.getElementById(linkModificar)
+            }
+
+            function myFunction2(valor,infoCambiar){
+                  console.log(1)
+                  document.getElementById(infoCambiar).innerText=valor;       
+            }
+
+            function myFunction(valor,infoCambiar){
+                  console.log(1)
+                  document.getElementById(infoCambiar).href=valor;       
+            }
+
+            function Mensaje(mensaje){
+                  console.log(mensaje+"<br>");
+            }
+
+            function ShowFile(input){
+                  let file=input.files[0]
+                  alert(`File name: ${file.name}`);
+                  alert(`Last modified: ${file.lastModified};`)
+
+                  let reader=new FileReader
+                  reader.readAsText(file)
+                  reader.onload()= function(){
+                        console.log(reader.result);
+                        document.getElementById("editar_info_laboral").innerText=reader.result;
+                  };
+                  reader.onerror=function(){
+                        console.log(reader.error);
+                  };
+            }
+
+            /*function ShowFileImagen(input){
+                  document.getElementById("imagen_redonda_id")=input
+            }*/
+
+            function showFileImagen(input,imagen){
+                  var archivo = document.getElementById(input).files[0];
+                  var reader = new FileReader();
+                  if (input) {
+                        reader.readAsDataURL(archivo );
+                        reader.onloadend = function () {
+                        document.getElementById(imagen).src = reader.result;
+                        }
+                  }
+                  document.getElementById(input).style.display="none";
+            }
+
+            function activarInputImagen(input){
+                  document.getElementById(input).style.display="flex";
+            }
+
+           function CrearVariable(input){
+                  let textInfoGeneral=document.getElementById(input)
+                  textInfoGeneral.addEventListener('keyup', (e) => { Mensaje(`Key "${e.key}" released [event:keyup]`);
+                        if(e.key=="Enter"){
+                              document.getElementById(input).style.display="none";
+                        }
+                  }); 
+           }
+            
+            function EliminarElemento(infoEliminar){
+                  var texto = document.getElementById(infoEliminar);
+                  texto.innerText="";
+            }
+
+            function EliminarElementoConImagen(infoEliminar,infoEliminar2,imagenEliminar){
+                  var texto = document.getElementById(infoEliminar);
+                  texto.innerText="";
+                  var texto2 = document.getElementById(infoEliminar2);
+                  texto2.innerText="";
+                  document.getElementById(imagenEliminar).src="";
+                  document.getElementById(imagenEliminar).alt="";
+                  //document.getElementById(imagenEliminar).style="display:none"
+            }
+
+            function EliminarElementoConBoton(infoEliminar,infoEliminar2,botonEliminar){
+                  var texto = document.getElementById(infoEliminar);
+                  texto.innerText="";
+                  var texto2 = document.getElementById(infoEliminar2);
+                  texto2.innerText="";
+                  document.getElementById(botonEliminar).style.display="none";
+            }
+
+      </script>
+</body>
+</html>

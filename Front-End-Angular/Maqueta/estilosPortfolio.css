@@ -1,0 +1,110 @@
+
+
+.progress{
+    margin-top: -10px;
+}
+#imagen_perfil{
+    border-radius: 32px;
+}
+
+.boton_editar{
+    text-align: right;
+}
+
+.boton_eliminar{
+    text-align: right;
+}
+.caja{
+    border-radius: 32px;
+    margin: 10px 10px;
+    padding: 20px;
+    border:1px solid #666;
+}
+
+div#imagen_portada{
+    display: flex;
+    z-index: 1;
+}
+
+div#imagen_portada img{
+    width: 100%;
+    height: 100%;
+    border-radius: 32px 32px 0px 0px;
+    
+}
+.info_imagen{
+    text-align:justify;
+}
+
+.info_imagen p {
+    margin-bottom: -10px;
+}
+
+.imagen_redonda{
+    border-radius: 50%;
+    height: 152px;
+    width: 152px;
+    margin-top: -110px;
+    z-index: 1;
+    border:1px solid #666;
+}
+
+.ver {
+    width:3em;
+    height:3em;
+}
+
+.logo{
+    width:auto;
+    height:5em;
+    margin-top: -10px;
+    margin-left: -20px;
+}
+
+.redSocial{
+    width:2em;
+    height:2em;
+}
+
+footer{
+    background: rgb(17, 55, 179);
+}
+
+header{
+    background:rgb(126, 151, 235);
+    height: 100px;
+}
+
+.logo_educacion{
+    height: 100px;
+    width: 100px;
+}
+
+.logo_laboral{
+    height: 100px;
+    width: 100px;
+}
+
+/*.btnVer{
+    width:100px;
+    height: 50px;
+}*/
+
+.boton_editar_opcion{
+    text-align: right;
+}
+
+.contenido_encabezado{
+    margin-top: 100px;
+}
+
+header{
+    padding-top: 20px;
+}
+
+.item_educacion{
+    margin-bottom: 20px;
+}
+.item_laboral{
+    margin-bottom: 20px;
+}
